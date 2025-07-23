@@ -1,3 +1,4 @@
+namespace SimpleInventorySys.Models;
 class Product
 {
     private readonly uint id;

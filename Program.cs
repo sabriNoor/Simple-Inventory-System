@@ -1,4 +1,6 @@
-﻿class Program
+﻿using SimpleInventorySys.Services;
+using SimpleInventorySys.Models.Enums;
+class Program
 {
     public static void Main()
     {
@@ -9,27 +11,24 @@
             while (true)
             {
                 Console.WriteLine("Menue Operations:");
-                Console.WriteLine("1- Display products.");
-                Console.WriteLine("2- Add new product.");
-                Console.WriteLine("3- Update a product.");
-                Console.WriteLine("4- Delete a product.");
-                Console.WriteLine("5- Display a product by id.");
+                Console.WriteLine("1- Add new product.");
+                Console.WriteLine("2- Update a product.");
+                Console.WriteLine("3- Delete a product.");
+                Console.WriteLine("4- Display a product by id.");
+                Console.WriteLine("5- Display all products.");
                 Console.WriteLine("6- Display out of stock products.");
                 Console.WriteLine("7- Exit.");
                 Console.WriteLine("Enter your option:");
                 short opt = Convert.ToInt16(Console.ReadLine());
-                if (opt == 7)
+                Option option = (Option)opt;
+                if (option == Option.Exit)
                 {
                     break;
                 }
-                switch (opt)
+                switch (option)
                 {
-                    case 1:
-                        {
-                            operations.displayProducts();
-                            break;
-                        }
-                    case 2:
+
+                    case Option.Add:
                         {
                             Console.WriteLine("Name: ");
                             var name = Console.ReadLine();
@@ -51,7 +50,7 @@
                             break;
                         }
 
-                    case 3:
+                    case Option.Update:
                         {
                             Console.WriteLine("id#: ");
                             if (!UInt32.TryParse(Console.ReadLine(), out var id))
@@ -84,7 +83,7 @@
                             break;
 
                         }
-                    case 4:
+                    case Option.Remove:
                         {
                             Console.WriteLine("id#: ");
                             if (!UInt32.TryParse(Console.ReadLine(), out var id))
@@ -95,7 +94,7 @@
                             operations.deleteProduct(id);
                             break;
                         }
-                        case 5:
+                    case Option.DisplayById:
                         {
                             Console.WriteLine("id#: ");
                             if (!UInt32.TryParse(Console.ReadLine(), out var id))
@@ -106,7 +105,12 @@
                             operations.getProductById(id);
                             break;
                         }
-                        case 6:
+                    case Option.DisplayAll:
+                        {
+                            operations.displayProducts();
+                            break;
+                        }
+                    case Option.DisplayOutOfStock:
                         {
                             operations.displayProducts(true);
                             break;

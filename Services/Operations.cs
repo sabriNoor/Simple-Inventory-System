@@ -1,5 +1,8 @@
-using System.Text.Json;
+namespace SimpleInventorySys.Services;
 
+using System.Text.Json;
+using SimpleInventorySys.Models.Interfaces;
+using SimpleInventorySys.Models;
 class Operations : IInventoryOperations
 {
     private List<Product> products;
