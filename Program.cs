@@ -7,7 +7,7 @@ class Program
         try
         {
             Operations operations = new Operations();
-            Console.WriteLine("Wellcome Back!");
+            Console.WriteLine("Welcome Back!");
             while (true)
             {
                 Console.WriteLine("Menue Operations:");
