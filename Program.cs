@@ -1,5 +1,5 @@
-﻿using SimpleInventorySys.Services;
-using SimpleInventorySys.Models.Enums;
+﻿using SimpleInventorySystem.Services;
+using SimpleInventorySystem.Models.Enums;
 class Program
 {
     public static void Main()

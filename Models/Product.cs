@@ -1,4 +1,4 @@
-namespace SimpleInventorySys.Models;
+namespace SimpleInventorySystem.Models;
 class Product
 {
     private readonly uint id;

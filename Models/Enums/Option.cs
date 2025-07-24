@@ -1,4 +1,4 @@
-namespace SimpleInventorySys.Models.Enums;
+namespace SimpleInventorySystem.Models.Enums;
 public enum Option
 {
     None = 0,
