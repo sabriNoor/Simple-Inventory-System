@@ -2,7 +2,7 @@ namespace SimpleInventorySystem.Models;
 class Product
 {
     private readonly uint id;
-    private string name;
+    private string name=string.Empty;
     private int stockCount;
     private decimal price;
 
