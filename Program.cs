@@ -45,7 +45,7 @@ class Program
                                 Console.WriteLine("Invalid stock count input. Please enter a valid positive integer.");
                                 continue;
                             }
-                            operations.addNewProduct(name, stockCount, price);
+                            operations.AddNewProduct(name, stockCount, price);
 
                             break;
                         }
@@ -79,7 +79,7 @@ class Program
                                 price = p;
                             }
 
-                            operations.updateProduct(id, name, stockCount, price);
+                            operations.UpdateProduct(id, name, stockCount, price);
                             break;
 
                         }
@@ -91,7 +91,7 @@ class Program
                                 Console.WriteLine("Invalid ID input. Please enter a valid positive integer.");
                                 continue;
                             }
-                            operations.deleteProduct(id);
+                            operations.DeleteProduct(id);
                             break;
                         }
                     case Option.DisplayById:
@@ -102,17 +102,17 @@ class Program
                                 Console.WriteLine("Invalid ID input. Please enter a valid positive integer.");
                                 continue;
                             }
-                            operations.getProductById(id);
+                            operations.GetProductById(id);
                             break;
                         }
                     case Option.DisplayAll:
                         {
-                            operations.displayProducts();
+                            operations.DisplayProducts();
                             break;
                         }
                     case Option.DisplayOutOfStock:
                         {
-                            operations.displayProducts(true);
+                            operations.DisplayProducts(true);
                             break;
                         }
 

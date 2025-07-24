@@ -14,16 +14,16 @@ class Operations : IInventoryOperations
     {
         products = new List<Product>();
         Console.WriteLine("Path: " + filePath);
-        readFile();
+        ReadFile();
     }
 
-    public void addNewProduct(string? name, uint stockCount, decimal price)
+    public void AddNewProduct(string? name, uint stockCount, decimal price)
     {
         try
         {
             Product product = new Product(name, stockCount, price);
             products.Add(product);
-            writeOnFile();
+            WriteOnFile();
             Console.WriteLine("Product added successfully!");
         }
         catch (Exception ex)
@@ -32,13 +32,13 @@ class Operations : IInventoryOperations
         }
     }
 
-    public void deleteProduct(uint id)
+    public void DeleteProduct(uint id)
     {
         try
         {
             // products.Remove(products.Where(p => p.Id == id).Single());
 
-            Product? product = searchProduct(id);
+            Product? product = SearchProduct(id);
             if (product == null)
             {
                 Console.WriteLine("Failed to delete, Product Not Found!!");
@@ -46,7 +46,7 @@ class Operations : IInventoryOperations
             }
 
             products.Remove(product);
-            writeOnFile();
+            WriteOnFile();
             Console.WriteLine("Product deleted successfully!");
         }
         catch (Exception ex)
@@ -56,11 +56,11 @@ class Operations : IInventoryOperations
 
     }
 
-    public void updateProduct(uint id, string? name, uint? stockCount, decimal? price)
+    public void UpdateProduct(uint id, string? name, uint? stockCount, decimal? price)
     {
         try
         {
-            Product? product = searchProduct(id);
+            Product? product = SearchProduct(id);
             if (product == null)
             {
                 Console.WriteLine("Failed to update; product Not Found!!");
@@ -74,7 +74,7 @@ class Operations : IInventoryOperations
             if (price != null)
                 product.Price = (decimal)price;
 
-            writeOnFile();
+            WriteOnFile();
             Console.WriteLine("Product updated successfully!");
 
         }
@@ -85,7 +85,7 @@ class Operations : IInventoryOperations
 
     }
 
-    public void displayProducts(bool displayOutOfStock=false)
+    public void DisplayProducts(bool displayOutOfStock=false)
     {
         List<Product> products = displayOutOfStock ? 
             this.products.Where(p => p.StockCount == 0).ToList() : 
@@ -97,9 +97,9 @@ class Operations : IInventoryOperations
         Console.WriteLine($"Count: {products.Count}");
     }
 
-    public void getProductById(uint id)
+    public void GetProductById(uint id)
     {
-        Product? product = searchProduct(id);
+        Product? product = SearchProduct(id);
         if (product != null)
         {
             Console.WriteLine(product);
@@ -110,7 +110,7 @@ class Operations : IInventoryOperations
         }
     }
 
-    private Product? searchProduct(uint id)
+    private Product? SearchProduct(uint id)
     {
         foreach (Product p in products)
         {
@@ -122,7 +122,7 @@ class Operations : IInventoryOperations
         return null;
     }
 
-    private void readFile()
+    private void ReadFile()
     {
         try
         {
@@ -141,7 +141,7 @@ class Operations : IInventoryOperations
         }
     }
 
-    private void writeOnFile()
+    private void WriteOnFile()
     {
         try
         {
