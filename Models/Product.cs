@@ -5,7 +5,6 @@ class Product
     private string? name;
     private uint stockCount;
     private decimal price;
-    private static uint idC = 0;
 
     public uint Id => id;
 
@@ -37,9 +36,9 @@ class Product
         }
     }
 
-    public Product(string? name, uint stockCount, decimal price)
+    public Product(uint id,string? name, uint stockCount, decimal price)
     {
-        id = idC++;
+        this.id = id;
         Name = name;
         StockCount = stockCount;
         Price = price;

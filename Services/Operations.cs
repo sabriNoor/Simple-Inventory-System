@@ -21,7 +21,8 @@ class Operations : IInventoryOperations
     {
         try
         {
-            Product product = new Product(name, stockCount, price);
+            uint id= products.Count > 0 ? products.Max(p => p.Id) + 1 : 1; 
+            Product product = new Product(id,name, stockCount, price);
             products.Add(product);
             WriteOnFile();
             Console.WriteLine("Product added successfully!");
