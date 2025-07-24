@@ -2,13 +2,13 @@ namespace SimpleInventorySystem.Models;
 class Product
 {
     private readonly uint id;
-    private string? name;
-    private uint stockCount;
+    private string name;
+    private int stockCount;
     private decimal price;
 
     public uint Id => id;
 
-    public string? Name
+    public string Name
     {
         get => name;
         set
@@ -19,10 +19,15 @@ class Product
         }
     }
 
-    public uint StockCount
+    public int StockCount
     {
         get => stockCount;
-        set => stockCount = value;
+        set
+        {
+            if(value < 0)
+            throw new ArgumentException("Product stock count cannot be negative.", nameof(StockCount));
+            stockCount = value;
+        }
     }
 
     public decimal Price
@@ -36,7 +41,7 @@ class Product
         }
     }
 
-    public Product(uint id,string? name, uint stockCount, decimal price)
+    public Product(uint id, string name, int stockCount, decimal price)
     {
         this.id = id;
         Name = name;

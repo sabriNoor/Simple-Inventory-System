@@ -17,7 +17,7 @@ class Operations : IInventoryOperations
         ReadFile();
     }
 
-    public void AddNewProduct(string? name, uint stockCount, decimal price)
+    public void AddNewProduct(string name, int stockCount, decimal price)
     {
         try
         {
@@ -57,7 +57,7 @@ class Operations : IInventoryOperations
 
     }
 
-    public void UpdateProduct(uint id, string? name, uint? stockCount, decimal? price)
+    public void UpdateProduct(uint id, string? name, int? stockCount, decimal? price)
     {
         try
         {
@@ -71,7 +71,7 @@ class Operations : IInventoryOperations
             if (!String.IsNullOrEmpty(name))
                 product.Name = name;
             if (stockCount != null)
-                product.StockCount = (uint)stockCount;
+                product.StockCount = (int)stockCount;
             if (price != null)
                 product.Price = (decimal)price;
 

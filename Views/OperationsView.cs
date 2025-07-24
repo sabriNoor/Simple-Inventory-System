@@ -15,7 +15,12 @@ class OperationsView : IInventoryOperationsView
     {
 
         Console.WriteLine("Name: ");
-        var name = Console.ReadLine();
+        string? name = Console.ReadLine();
+        if(string.IsNullOrWhiteSpace(name))
+        {
+            Console.WriteLine("Product name cannot be empty.");
+            return;
+        }
         Console.WriteLine("Price: ");
         if (!Decimal.TryParse(Console.ReadLine(), out var price))
         {
@@ -23,7 +28,7 @@ class OperationsView : IInventoryOperationsView
             return;
         }
         Console.WriteLine("Stock Count: ");
-        if (!UInt32.TryParse(Console.ReadLine(), out var stockCount))
+        if (!Int32.TryParse(Console.ReadLine(), out var stockCount))
         {
             Console.WriteLine("Invalid stock count input. Please enter a valid positive integer.");
             return;
@@ -46,8 +51,8 @@ class OperationsView : IInventoryOperationsView
 
         Console.WriteLine("New stock count (or press Enter to keep old): ");
         string? stockInput = Console.ReadLine();
-        uint? stockCount = null;
-        if (!String.IsNullOrWhiteSpace(stockInput) && uint.TryParse(stockInput, out var stock))
+        int? stockCount = null;
+        if (!String.IsNullOrWhiteSpace(stockInput) && int.TryParse(stockInput, out var stock))
         {
             stockCount = stock;
         }
