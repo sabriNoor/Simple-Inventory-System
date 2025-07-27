@@ -3,6 +3,8 @@ namespace SimpleInventorySystem.Services;
 using System.Text.Json;
 using SimpleInventorySystem.Models.Interfaces;
 using SimpleInventorySystem.Models;
+using SimpleInventorySystem.Utils.Validation;
+
 class Operations : IInventoryOperations
 {
     private List<Product> products;
@@ -21,8 +23,13 @@ class Operations : IInventoryOperations
     {
         try
         {
-            uint id= products.Count > 0 ? products.Max(p => p.Id) + 1 : 1; 
-            Product product = new Product(id,name, stockCount, price);
+            uint id = products.Count > 0 ? products.Max(p => p.Id) + 1 : 1;
+            Product product = new Product(id, name, stockCount, price);
+            if (!ProductValidator.ValidateForAdd(product, out var error))
+            {
+                Console.WriteLine($"Invalid product details: {error}");
+                return;
+            }
             products.Add(product);
             WriteOnFile();
             Console.WriteLine("Product added successfully!");
@@ -37,15 +44,7 @@ class Operations : IInventoryOperations
     {
         try
         {
-            // products.Remove(products.Where(p => p.Id == id).Single());
-
-            Product? product = SearchProduct(id);
-            if (product == null)
-            {
-                Console.WriteLine("Failed to delete, Product Not Found!!");
-                return;
-            }
-
+            Product product = GetExistingProduct(id);
             products.Remove(product);
             WriteOnFile();
             Console.WriteLine("Product deleted successfully!");
@@ -61,37 +60,34 @@ class Operations : IInventoryOperations
     {
         try
         {
-            Product? product = SearchProduct(id);
-            if (product == null)
+            Product product = GetExistingProduct(id);
+
+            if (!ProductValidator.ValidateForUpdate(name, stockCount, price, out var error))
             {
-                Console.WriteLine("Failed to update; product Not Found!!");
+                Console.WriteLine($"Invalid product details: {error}");
                 return;
             }
 
-            if (!String.IsNullOrEmpty(name))
-                product.Name = name;
-            if (stockCount != null)
-                product.StockCount = (int)stockCount;
-            if (price != null)
-                product.Price = (decimal)price;
+            if (name != null) product.Name = name;
+            if (stockCount != null) product.StockCount = stockCount.Value;
+            if (price != null) product.Price = price.Value;
 
             WriteOnFile();
             Console.WriteLine("Product updated successfully!");
-
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Failed to update the product. {ex.Message}");
         }
-
     }
 
-    public void DisplayProducts(bool displayOutOfStock=false)
+
+    public void DisplayProducts(bool displayOutOfStock = false)
     {
-        List<Product> products = displayOutOfStock ? 
-            this.products.Where(p => p.StockCount == 0).ToList() : 
+        List<Product> products = displayOutOfStock ?
+            this.products.Where(p => p.StockCount == 0).ToList() :
             this.products;
-        Console.WriteLine("Produts: ");
+        Console.WriteLine("Products: ");
         Console.WriteLine(format, "Id#", "Name", "Stock Count", "Price");
         products.ToList().ForEach(p => Console.WriteLine(format, $"{p.Id}", p.Name, $"{p.StockCount}", $"{p.Price}"));
         Console.WriteLine();
@@ -100,15 +96,18 @@ class Operations : IInventoryOperations
 
     public void GetProductById(uint id)
     {
-        Product? product = SearchProduct(id);
-        if (product != null)
+        try
         {
+            Product product = GetExistingProduct(id);
+            Console.WriteLine("Product found:");
             Console.WriteLine(product);
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine("Product not found.");
+            Console.WriteLine($"Failed to get the product with id {id}. {ex.Message}");
+            return;
         }
+
     }
 
     private Product? SearchProduct(uint id)
@@ -155,5 +154,17 @@ class Operations : IInventoryOperations
         }
     }
 
-   
+    private Product GetExistingProduct(uint id)
+    {
+        Product? product = SearchProduct(id);
+
+        if (product == null)
+        {
+            throw new Exception($"Product with ID {id} does not exist.");
+        }
+        return product;
+
+    }
+
+
 }

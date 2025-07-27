@@ -1,5 +1,5 @@
 namespace SimpleInventorySystem.Models;
-class Product
+public class Product
 {
     public uint Id{get;set;}
 
