@@ -5,7 +5,7 @@ public static class Validator
 {
     public static ValidationResult<string> ReadNonEmptyString(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         var input = Console.ReadLine()?.Trim();
         return string.IsNullOrWhiteSpace(input)
             ? ValidationResult<string>.Failure("Input cannot be empty.")
@@ -14,7 +14,7 @@ public static class Validator
 
     public static ValidationResult<decimal> ReadDecimal(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         return decimal.TryParse(Console.ReadLine(), out var result)
             ? ValidationResult<decimal>.Success(result)
             : ValidationResult<decimal>.Failure("Invalid decimal input.");
@@ -22,7 +22,7 @@ public static class Validator
 
     public static ValidationResult<int> ReadInt(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         return int.TryParse(Console.ReadLine(), out var result)
             ? ValidationResult<int>.Success(result)
             : ValidationResult<int>.Failure("Invalid integer input.");
@@ -30,7 +30,7 @@ public static class Validator
 
     public static ValidationResult<uint> ReadUInt(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         return uint.TryParse(Console.ReadLine(), out var result)
             ? ValidationResult<uint>.Success(result)
             : ValidationResult<uint>.Failure("Invalid unsigned integer input.");
@@ -38,7 +38,7 @@ public static class Validator
 
     public static ValidationResult<int?> ReadOptionalInt(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         var input = Console.ReadLine()?.Trim();
         if (string.IsNullOrWhiteSpace(input))
             return ValidationResult<int?>.Success(null);
@@ -51,7 +51,7 @@ public static class Validator
 
     public static ValidationResult<decimal?> ReadOptionalDecimal(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         var input = Console.ReadLine()?.Trim();
         if (string.IsNullOrWhiteSpace(input))
             return ValidationResult<decimal?>.Success(null);
@@ -63,7 +63,7 @@ public static class Validator
     }
     public static ValidationResult<string?> ReadOptionalString(string prompt)
     {
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}: ");
         var input = Console.ReadLine()?.Trim();
         return string.IsNullOrWhiteSpace(input)
                ? ValidationResult<string?>.Success(null)
