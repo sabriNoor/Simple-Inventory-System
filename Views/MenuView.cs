@@ -43,22 +43,22 @@ class MenuView :IInventoryMenuView
                 switch (option)
                 {
                     case Option.Add:
-                        operationsView.ShowAddNewProduct();
+                        operationsView.RenderAddNewProduct();
                         break;
                     case Option.Update:
-                        operationsView.ShowUpdateProduct();
+                        operationsView.RenderUpdateProduct();
                         break;
                     case Option.Remove:
-                        operationsView.ShowDeleteProduct();
+                        operationsView.RenderDeleteProduct();
                         break;
                     case Option.DisplayById:
-                        operationsView.ShowDisplayProductById();
+                        operationsView.RenderDisplayProductById();
                         break;
                     case Option.DisplayAll:
-                        operationsView.ShowDisplayAllProducts();
+                        operationsView.RenderDisplayAllProducts();
                         break;
                     case Option.DisplayOutOfStock:
-                        operationsView.ShowDisplayAllProducts(true);
+                        operationsView.RenderDisplayAllProducts(true);
                         break;
                     default:
                         break;

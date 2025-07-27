@@ -1,9 +1,9 @@
 namespace SimpleInventorySystem.Models.Interfaces;
 public interface IInventoryOperationsView
 {
-    void ShowAddNewProduct();
-    void ShowUpdateProduct();
-    void ShowDeleteProduct();
-    void ShowDisplayProductById();
-    void ShowDisplayAllProducts(bool displayOutOfStock = false);
+    void RenderAddNewProduct();
+    void RenderUpdateProduct();
+    void RenderDeleteProduct();
+    void RenderDisplayProductById();
+    void RenderDisplayAllProducts(bool displayOutOfStock = false);
 }

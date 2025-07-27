@@ -13,7 +13,7 @@ class OperationsView : IInventoryOperationsView
         Logger.LogInfo("OperationsView initialized.");
     }
 
-    public void ShowAddNewProduct()
+    public void RenderAddNewProduct()
     {
         var nameResult = Validator.ReadNonEmptyString("Enter product name: ");
         if (!CheckValidation(nameResult, out var name))
@@ -39,7 +39,7 @@ class OperationsView : IInventoryOperationsView
 
     }
 
-    public void ShowUpdateProduct()
+    public void RenderUpdateProduct()
     {
         var idResult = Validator.ReadUInt("Enter product ID: ");
         if (!CheckValidation(idResult, out var id))
@@ -65,7 +65,7 @@ class OperationsView : IInventoryOperationsView
         
     }
 
-    public void ShowDeleteProduct()
+    public void RenderDeleteProduct()
     {
         var idResult = Validator.ReadUInt("Enter product ID to delete: ");
         if (!CheckValidation(idResult, out var id))
@@ -81,14 +81,14 @@ class OperationsView : IInventoryOperationsView
         }
     }
 
-    public void ShowDisplayProductById()
+    public void RenderDisplayProductById()
     {
         var idResult = Validator.ReadUInt("Enter product ID: ");
         if (!CheckValidation(idResult, out var id))
             return;
         operations.DisplayProductById(id);
     }
-    public void ShowDisplayAllProducts(bool displayOutOfStock = false)
+    public void RenderDisplayAllProducts(bool displayOutOfStock = false)
     {
         operations.DisplayProducts(displayOutOfStock);
     }
