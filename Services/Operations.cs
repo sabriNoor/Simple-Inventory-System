@@ -97,16 +97,18 @@ class Operations : IInventoryOperations
 
     public void DisplayProducts(bool displayOutOfStock = false)
     {
-        List<Product> products = displayOutOfStock ?
-            this.products.Where(p => p.StockCount == 0).ToList() :
-            this.products;
+        List<Product> filtered  = displayOutOfStock ? products.Where(p => p.StockCount == 0).ToList() :products;
         Console.WriteLine("Products: ");
         Console.WriteLine(format, "Id#", "Name", "Stock Count", "Price");
-        products.ToList().ForEach(p => Console.WriteLine(format, $"{p.Id}", p.Name, $"{p.StockCount}", $"{p.Price}"));
+        foreach (var product in filtered)
+        {
+            Console.WriteLine(format, $"{product.Id}", product.Name, $"{product.StockCount}", $"{product.Price}");
+        }
         Console.WriteLine();
         Console.WriteLine($"Count: {products.Count}");
         Logger.LogInfo($"Displayed {products.Count} {(displayOutOfStock ? "out of stock" : "")} product(s).");
     }
+
 
     public void DisplayProductById(uint id)
     {
