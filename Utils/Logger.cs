@@ -4,7 +4,7 @@ public static class Logger
 {
     private const string FileName = "log.txt";
     private static readonly object lockObj = new();
-    private static readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(),"Logs", FileName);
+    private static readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Logs", FileName);
     static Logger()
     {
         if (!File.Exists(filePath))
@@ -28,7 +28,15 @@ public static class Logger
         var logEntry = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{level}] {message}";
         lock (lockObj)
         {
-            File.AppendAllText(filePath, logEntry + Environment.NewLine);
+
+            try
+            {
+                File.AppendAllText(filePath, logEntry + Environment.NewLine);
+            }
+            catch (IOException ioEx)
+            {
+                Console.WriteLine($"Failed to write to log file: {ioEx.Message}");
+            }
         }
         Console.WriteLine(logEntry);
 
