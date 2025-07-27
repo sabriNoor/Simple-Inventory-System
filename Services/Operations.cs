@@ -126,17 +126,8 @@ class Operations : IInventoryOperations
 
     }
 
-    private Product? SearchProduct(uint id)
-    {
-        foreach (Product p in products)
-        {
-            if (p.Id == id)
-            {
-                return p;
-            }
-        }
-        return null;
-    }
+    private Product? SearchProduct(uint id)=>
+        products.FirstOrDefault(p => p.Id == id);
 
     private void ReadFile()
     {
