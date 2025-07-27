@@ -4,7 +4,7 @@ public static class Logger
 {
     private const string FileName = "log.txt";
     private static readonly object lockObj = new();
-    private static readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), FileName);
+    private static readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(),"Logs", FileName);
     static Logger()
     {
         if (!File.Exists(filePath))
