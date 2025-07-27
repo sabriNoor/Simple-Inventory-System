@@ -1,0 +1,13 @@
+2025-07-27 16:07:49 [INFO] Application started.
+2025-07-27 16:07:49 [INFO] Operations initialized.
+2025-07-27 16:07:49 [INFO] Products read from products.json successfully.
+2025-07-27 16:07:49 [INFO] OperationsView initialized.
+2025-07-27 16:07:49 [INFO] MenuView initialized.
+2025-07-27 16:07:49 [INFO] User has started the application
+2025-07-27 16:08:07 [INFO] Products written to products.json successfully.
+2025-07-27 16:08:07 [INFO] Product added: id#: 7, name: rice, price: $20.00, stock count: 10
+2025-07-27 16:08:10 [INFO] Displayed 6  product(s).
+2025-07-27 16:08:32 [ERROR] Failed to delete product with id 9: Product with ID 9 does not exist.
+2025-07-27 16:08:37 [INFO] Displayed 6  product(s).
+2025-07-27 16:08:42 [INFO] Displayed 6 out of stock product(s).
+2025-07-27 16:08:49 [INFO] User has exited the application
