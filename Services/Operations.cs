@@ -18,11 +18,11 @@ class Operations : IInventoryOperations
     {
         products = new List<Product>();
         Console.WriteLine("Path: " + filePath);
-        Logger.LogInfo($"Operations services initialized.");
+        Logger.LogInfo($"Operations initialized.");
         ReadFile();
     }
 
-    public void AddNewProduct(string name, int stockCount, decimal price)
+    public bool AddNewProduct(string name, int stockCount, decimal price)
     {
         try
         {
@@ -30,26 +30,24 @@ class Operations : IInventoryOperations
             Product product = new Product(id, name, stockCount, price);
             if (!ProductValidator.ValidateForAdd(product, out var error))
             {
-                Console.WriteLine($"Invalid product details: {error}");
                 Logger.LogError($"Invalid product details: {error}");
-                Console.WriteLine("Product not added.");
                 Logger.LogInfo("Product not added due to validation failure.");
-                return;
+                return false;
             }
             products.Add(product);
             WriteOnFile();
             Logger.LogInfo($"Product added: {product}");
-            Console.WriteLine("Product added successfully!");
+            return true;
 
         }
         catch (Exception ex)
         {
             Logger.LogError($"Failed to add new product: {ex.Message}");
-            Console.WriteLine($"Failed to add new product. {ex.Message}");
+            return false;
         }
     }
 
-    public void DeleteProduct(uint id)
+    public bool DeleteProduct(uint id)
     {
         try
         {
@@ -57,17 +55,17 @@ class Operations : IInventoryOperations
             products.Remove(product);
             WriteOnFile();
             Logger.LogInfo($"Product deleted: {product}");
-            Console.WriteLine($"Product with id {id} deleted successfully!");
+            return true;
         }
         catch (Exception ex)
         {
             Logger.LogError($"Failed to delete product with id {id}: {ex.Message}");
-            Console.WriteLine($"Failed to delete the product with id {id}. {ex.Message}");
+            return false;
         }
 
     }
 
-    public void UpdateProduct(uint id, string? name, int? stockCount, decimal? price)
+    public bool UpdateProduct(uint id, string? name, int? stockCount, decimal? price)
     {
         try
         {
@@ -75,14 +73,11 @@ class Operations : IInventoryOperations
             Logger.LogInfo($"Updating product: {product}");
             if (!ProductValidator.ValidateForUpdate(name, stockCount, price, out var error))
             {
-                Console.WriteLine($"Invalid product details: {error}");
                 Logger.LogError($"Invalid product details: {error}");
-                Console.WriteLine("Product not updated.");
                 Logger.LogInfo("Product not updated due to validation failure.");
-                Console.WriteLine(product);
-                return;
+                return false;
             }
-           
+
 
             if (name != null) product.Name = name;
             if (stockCount != null) product.StockCount = stockCount.Value;
@@ -90,13 +85,12 @@ class Operations : IInventoryOperations
 
             WriteOnFile();
             Logger.LogInfo($"Product updated: {product}");
-            Console.WriteLine($"Product with id {id} updated successfully!");
-            Console.WriteLine(product);
+            return true;
         }
         catch (Exception ex)
         {
             Logger.LogError($"Failed to update product with id {id}: {ex.Message}");
-            Console.WriteLine($"Failed to update the product. {ex.Message}");
+            return false;
         }
     }
 
@@ -114,7 +108,7 @@ class Operations : IInventoryOperations
         Logger.LogInfo($"Displayed {products.Count} {(displayOutOfStock ? "out of stock" : "")} product(s).");
     }
 
-    public void GetProductById(uint id)
+    public void DisplayProductById(uint id)
     {
         try
         {

@@ -27,7 +27,15 @@ class OperationsView : IInventoryOperationsView
         if (!CheckValidation(priceResult, out var price))
             return;
 
-        operations.AddNewProduct(name, stockCount, price);
+        if (operations.AddNewProduct(name, stockCount, price))
+        {
+            Console.WriteLine("Product added successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Failed to add product. Please check the details and try again.");
+        }
+        ;
 
     }
 
@@ -46,8 +54,15 @@ class OperationsView : IInventoryOperationsView
         if (!CheckValidation(priceResult, out var price))
             return;
 
-        operations.UpdateProduct(id, name, stockCount, price);
-
+        if (operations.UpdateProduct(id, name, stockCount, price))
+        {
+            Console.WriteLine("Product updated successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Failed to update product. Please check the details and try again.");
+        }
+        
     }
 
     public void ShowDeleteProduct()
@@ -56,7 +71,14 @@ class OperationsView : IInventoryOperationsView
         if (!CheckValidation(idResult, out var id))
             return;
 
-        operations.DeleteProduct(id);
+        if (operations.DeleteProduct(id))
+        {
+            Console.WriteLine("Product deleted successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Failed to delete product. Please check the ID and try again.");
+        }
     }
 
     public void ShowDisplayProductById()
@@ -64,7 +86,7 @@ class OperationsView : IInventoryOperationsView
         var idResult = Validator.ReadUInt("Enter product ID: ");
         if (!CheckValidation(idResult, out var id))
             return;
-        operations.GetProductById(id);
+        operations.DisplayProductById(id);
     }
     public void ShowDisplayAllProducts(bool displayOutOfStock = false)
     {
