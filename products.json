@@ -1,1 +1,1 @@
-[{"Id":0,"Name":"Milk","StockCount":200,"Price":10},{"Id":1,"Name":"Apple","StockCount":102,"Price":5},{"Id":3,"Name":"Banana","StockCount":125,"Price":6},{"Id":4,"Name":"Egg","StockCount":0,"Price":20},{"Id":5,"Name":"Rice","StockCount":250,"Price":15},{"Id":6,"Name":"rice","StockCount":60,"Price":10}]
+[{"Id":0,"Name":"Milk","StockCount":200,"Price":10},{"Id":3,"Name":"Banana","StockCount":125,"Price":6},{"Id":4,"Name":"Egg","StockCount":100,"Price":20},{"Id":5,"Name":"Rice","StockCount":250,"Price":15},{"Id":6,"Name":"rice","StockCount":60,"Price":10}]

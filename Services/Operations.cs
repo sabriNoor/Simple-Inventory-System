@@ -18,6 +18,7 @@ class Operations : IInventoryOperations
     {
         products = new List<Product>();
         Console.WriteLine("Path: " + filePath);
+        Logger.LogInfo($"Operations services initialized.");
         ReadFile();
     }
 
@@ -30,6 +31,9 @@ class Operations : IInventoryOperations
             if (!ProductValidator.ValidateForAdd(product, out var error))
             {
                 Console.WriteLine($"Invalid product details: {error}");
+                Logger.LogError($"Invalid product details: {error}");
+                Console.WriteLine("Product not added.");
+                Logger.LogInfo("Product not added due to validation failure.");
                 return;
             }
             products.Add(product);
@@ -68,12 +72,17 @@ class Operations : IInventoryOperations
         try
         {
             Product product = GetExistingProduct(id);
-
+            Logger.LogInfo($"Updating product: {product}");
             if (!ProductValidator.ValidateForUpdate(name, stockCount, price, out var error))
             {
                 Console.WriteLine($"Invalid product details: {error}");
+                Logger.LogError($"Invalid product details: {error}");
+                Console.WriteLine("Product not updated.");
+                Logger.LogInfo("Product not updated due to validation failure.");
+                Console.WriteLine(product);
                 return;
             }
+           
 
             if (name != null) product.Name = name;
             if (stockCount != null) product.StockCount = stockCount.Value;
@@ -102,7 +111,7 @@ class Operations : IInventoryOperations
         products.ToList().ForEach(p => Console.WriteLine(format, $"{p.Id}", p.Name, $"{p.StockCount}", $"{p.Price}"));
         Console.WriteLine();
         Console.WriteLine($"Count: {products.Count}");
-
+        Logger.LogInfo($"Displayed {products.Count} {(displayOutOfStock ? "out of stock" : "")} product(s).");
     }
 
     public void GetProductById(uint id)
@@ -112,9 +121,11 @@ class Operations : IInventoryOperations
             Product product = GetExistingProduct(id);
             Console.WriteLine("Product found:");
             Console.WriteLine(product);
+            Logger.LogInfo($"Product retrieved: {product}");
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Failed to get the product with id {id}: {ex.Message}");
             Console.WriteLine($"Failed to get the product with id {id}. {ex.Message}");
             return;
         }
