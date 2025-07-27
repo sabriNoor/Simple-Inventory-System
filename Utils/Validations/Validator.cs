@@ -15,7 +15,8 @@ public static class Validator
     public static ValidationResult<decimal> ReadDecimal(string prompt)
     {
         Console.Write($"{prompt}: ");
-        return decimal.TryParse(Console.ReadLine(), out var result)
+        var input = Console.ReadLine()?.Trim();
+        return decimal.TryParse(input, out var result)
             ? ValidationResult<decimal>.Success(result)
             : ValidationResult<decimal>.Failure("Invalid decimal input.");
     }
@@ -23,7 +24,8 @@ public static class Validator
     public static ValidationResult<int> ReadInt(string prompt)
     {
         Console.Write($"{prompt}: ");
-        return int.TryParse(Console.ReadLine(), out var result)
+        var input = Console.ReadLine()?.Trim();
+        return int.TryParse(input, out var result)
             ? ValidationResult<int>.Success(result)
             : ValidationResult<int>.Failure("Invalid integer input.");
     }
@@ -31,7 +33,8 @@ public static class Validator
     public static ValidationResult<uint> ReadUInt(string prompt)
     {
         Console.Write($"{prompt}: ");
-        return uint.TryParse(Console.ReadLine(), out var result)
+        var input = Console.ReadLine()?.Trim();
+        return uint.TryParse(input, out var result)
             ? ValidationResult<uint>.Success(result)
             : ValidationResult<uint>.Failure("Invalid unsigned integer input.");
     }
