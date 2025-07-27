@@ -1,4 +1,5 @@
 using SimpleInventorySystem.Models.Interfaces;
+using SimpleInventorySystem.Utils;
 using SimpleInventorySystem.Utils.Validation;
 namespace SimpleInventorySystem.Views;
 
@@ -74,6 +75,7 @@ class OperationsView : IInventoryOperationsView
         {
             Console.WriteLine(result.ErrorMessage);
             value = default!;
+            Logger.LogError(result.ErrorMessage?? "Validation failed.");
             return false;
         }
         value = result.Value!;

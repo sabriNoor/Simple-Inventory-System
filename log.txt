@@ -1,0 +1,3 @@
+2025-07-27 12:51:32 [INFO] Product added: id#: 6, name: rice, price: $10.00, stock count: 60
+2025-07-27 12:57:51 [INFO] Products read from products.json successfully.
+2025-07-27 12:57:54 [ERROR] Input cannot be empty.

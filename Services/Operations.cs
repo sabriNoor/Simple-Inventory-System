@@ -4,6 +4,8 @@ using System.Text.Json;
 using SimpleInventorySystem.Models.Interfaces;
 using SimpleInventorySystem.Models;
 using SimpleInventorySystem.Utils.Validation;
+using SimpleInventorySystem.Utils;
+
 
 class Operations : IInventoryOperations
 {
@@ -32,10 +34,13 @@ class Operations : IInventoryOperations
             }
             products.Add(product);
             WriteOnFile();
+            Logger.LogInfo($"Product added: {product}");
             Console.WriteLine("Product added successfully!");
+
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Failed to add new product: {ex.Message}");
             Console.WriteLine($"Failed to add new product. {ex.Message}");
         }
     }
@@ -47,10 +52,12 @@ class Operations : IInventoryOperations
             Product product = GetExistingProduct(id);
             products.Remove(product);
             WriteOnFile();
-            Console.WriteLine("Product deleted successfully!");
+            Logger.LogInfo($"Product deleted: {product}");
+            Console.WriteLine($"Product with id {id} deleted successfully!");
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Failed to delete product with id {id}: {ex.Message}");
             Console.WriteLine($"Failed to delete the product with id {id}. {ex.Message}");
         }
 
@@ -73,10 +80,13 @@ class Operations : IInventoryOperations
             if (price != null) product.Price = price.Value;
 
             WriteOnFile();
-            Console.WriteLine("Product updated successfully!");
+            Logger.LogInfo($"Product updated: {product}");
+            Console.WriteLine($"Product with id {id} updated successfully!");
+            Console.WriteLine(product);
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Failed to update product with id {id}: {ex.Message}");
             Console.WriteLine($"Failed to update the product. {ex.Message}");
         }
     }
@@ -92,6 +102,7 @@ class Operations : IInventoryOperations
         products.ToList().ForEach(p => Console.WriteLine(format, $"{p.Id}", p.Name, $"{p.StockCount}", $"{p.Price}"));
         Console.WriteLine();
         Console.WriteLine($"Count: {products.Count}");
+
     }
 
     public void GetProductById(uint id)
@@ -129,14 +140,17 @@ class Operations : IInventoryOperations
             if (!File.Exists(filePath))
             {
                 Console.WriteLine($"File {FileName} not found. Starting with empty product list.");
+                Logger.LogWarning($"File {FileName} not found. Starting with empty product list.");
                 return;
             }
 
             string json = File.ReadAllText(filePath);
             products = JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
+            Logger.LogInfo($"Products read from {FileName} successfully.");
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Failed to read the JSON file {FileName}: {ex.Message}");
             Console.WriteLine($"Failed to read the JSON file {FileName}. {ex.Message}");
         }
     }
@@ -147,9 +161,11 @@ class Operations : IInventoryOperations
         {
             string json = JsonSerializer.Serialize(products);
             File.WriteAllText(filePath, json);
+            Logger.LogInfo($"Products written to {FileName} successfully.");
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Failed to write to the JSON file {FileName}: {ex.Message}");
             Console.WriteLine($"Failed to write to the JSON file {FileName}. {ex.Message}");
         }
     }
