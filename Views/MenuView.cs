@@ -61,6 +61,8 @@ class MenuView :IInventoryMenuView
                         operationsView.RenderDisplayAllProducts(true);
                         break;
                     default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        Logger.LogWarning("Invalid option selected.");
                         break;
                 }
             }
