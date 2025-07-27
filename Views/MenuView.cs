@@ -6,7 +6,7 @@ namespace SimpleInventorySystem.Views;
 
 class MenuView :IInventoryMenuView
 {
-    private IInventoryOperationsView operationsView;
+    private readonly IInventoryOperationsView operationsView;
 
     public MenuView(IInventoryOperationsView operationsView)
     {
