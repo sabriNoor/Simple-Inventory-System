@@ -1,49 +1,17 @@
 namespace SimpleInventorySystem.Models;
 class Product
 {
-    private readonly uint id;
-    private string name=string.Empty;
-    private int stockCount;
-    private decimal price;
+    public uint Id{get;set;}
 
-    public uint Id => id;
+    public string Name{get;set;}
 
-    public string Name
-    {
-        get => name;
-        set
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("Product name cannot be null or whitespace.", nameof(Name));
-            name = value;
-        }
-    }
+    public int StockCount{get;set; }
 
-    public int StockCount
-    {
-        get => stockCount;
-        set
-        {
-            if(value < 0)
-            throw new ArgumentException("Product stock count cannot be negative.", nameof(StockCount));
-            stockCount = value;
-        }
-    }
-
-    public decimal Price
-    {
-        get => price;
-        set
-        {
-            if (value < 0)
-                throw new ArgumentOutOfRangeException(nameof(Price), "Price must be a positive value.");
-            price = value;
-        }
-    }
+    public decimal Price{ get;set;  }
 
     public Product(uint id, string name, int stockCount, decimal price)
     {
-        this.id = id;
+        Id = id;
         Name = name;
         StockCount = stockCount;
         Price = price;
@@ -64,6 +32,6 @@ class Product
 
     public override string ToString()
     {
-        return $"id#: {id}, name: {Name}, price: {price:c}, stock count: {stockCount}";
+        return $"id#: {Id}, name: {Name}, price: {Price:c}, stock count: {StockCount}";
     }
 }
