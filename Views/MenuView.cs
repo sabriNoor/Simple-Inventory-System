@@ -1,5 +1,6 @@
 using SimpleInventorySystem.Models.Enums;
 using SimpleInventorySystem.Models.Interfaces;
+using SimpleInventorySystem.Utils;
 
 namespace SimpleInventorySystem.Views;
 
@@ -9,6 +10,7 @@ class MenuView :IInventoryMenuView
 
     public MenuView(IInventoryOperationsView operationsView)
     {
+        Logger.LogInfo("MenuView initialized.");
         this.operationsView = operationsView;
     }
 
@@ -25,6 +27,7 @@ class MenuView :IInventoryMenuView
 
     public void ExecuteMenu()
     {
+        Logger.LogInfo("User has started the application");
         Console.WriteLine("Welcome Back!");
         try
         {
@@ -64,8 +67,11 @@ class MenuView :IInventoryMenuView
         }
         catch (Exception ex)
         {
+            Logger.LogError($"Something went wrong, {ex.Message}");
             Console.WriteLine($"Something went wrong, {ex.Message}");
+
         }
+        Logger.LogInfo("User has exited the application");
         Console.WriteLine("Have a Good Day, Bye!");
     }
 }

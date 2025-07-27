@@ -10,6 +10,7 @@ class OperationsView : IInventoryOperationsView
     public OperationsView(IInventoryOperations operations)
     {
         this.operations = operations;
+        Logger.LogInfo("OperationsView initialized.");
     }
 
     public void ShowAddNewProduct()

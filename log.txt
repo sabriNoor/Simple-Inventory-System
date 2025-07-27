@@ -22,3 +22,9 @@
 2025-07-27 13:50:42 [INFO] Displayed 5   product(s).
 2025-07-27 13:50:50 [INFO] Displayed 0 out of stock  product(s).
 2025-07-27 13:51:17 [INFO] Product retrieved: id#: 6, name: rice, price: $10.00, stock count: 60
+2025-07-27 13:58:35 [INFO] Operations services initialized.
+2025-07-27 13:58:35 [INFO] Products read from products.json successfully.
+2025-07-27 13:58:35 [INFO] OperationsView initialized.
+2025-07-27 13:58:35 [INFO] MenuView initialized.
+2025-07-27 13:58:35 [INFO] User has started the application
+2025-07-27 13:58:39 [INFO] User has exited the application
