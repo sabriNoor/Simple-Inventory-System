@@ -6,7 +6,7 @@ public class ProductValidator
 {
     public static bool ValidateForAdd(Product? product,out string? error)
     {
-        if (product == null)
+        if (product is null)
         {
             error = "Product cannot be null.";
             return false;
