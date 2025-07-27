@@ -4,7 +4,7 @@ namespace SimpleInventorySystem.Utils.Validation;
 
 public class ProductValidator
 {
-    public static bool ValidateForAdd(Product product,out string? error)
+    public static bool ValidateForAdd(Product? product,out string? error)
     {
         if (product == null)
         {
