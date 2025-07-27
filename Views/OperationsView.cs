@@ -27,7 +27,7 @@ class OperationsView : IInventoryOperationsView
         if (!CheckValidation(priceResult, out var price))
             return;
 
-        if (operations.AddNewProduct(name, stockCount, price))
+        if (operations.AddNewProduct(name??String.Empty, stockCount, price))
         {
             Console.WriteLine("Product added successfully!");
         }
@@ -92,16 +92,16 @@ class OperationsView : IInventoryOperationsView
     {
         operations.DisplayProducts(displayOutOfStock);
     }
-    private bool CheckValidation<T>(ValidationResult<T> result, out T value)
+    private bool CheckValidation<T>(ValidationResult<T> result, out T? value)
     {
         if (!result.IsValid)
         {
             Console.WriteLine(result.ErrorMessage);
-            value = default!;
             Logger.LogError(result.ErrorMessage?? "Validation failed.");
+            value = default;
             return false;
         }
-        value = result.Value!;
+        value = result.Value;
         return true;
     }
 
