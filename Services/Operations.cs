@@ -105,8 +105,8 @@ class Operations : IInventoryOperations
             Console.WriteLine(format, $"{product.Id}", product.Name, $"{product.StockCount}", $"{product.Price}");
         }
         Console.WriteLine();
-        Console.WriteLine($"Count: {products.Count}");
-        Logger.LogInfo($"Displayed {products.Count} {(displayOutOfStock ? "out of stock" : "")} product(s).");
+        Console.WriteLine($"Count: {filtered.Count}");
+        Logger.LogInfo($"Displayed {filtered.Count} {(displayOutOfStock ? "out of stock" : "")} product(s).");
     }
 
 
