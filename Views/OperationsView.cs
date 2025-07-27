@@ -5,7 +5,7 @@ namespace SimpleInventorySystem.Views;
 
 class OperationsView : IInventoryOperationsView
 {
-    private IInventoryOperations operations;
+    private readonly IInventoryOperations operations;
 
     public OperationsView(IInventoryOperations operations)
     {
