@@ -1,5 +1,5 @@
 using SimpleInventorySystem.Models.Interfaces;
-
+using SimpleInventorySystem.Utils.Validation;
 namespace SimpleInventorySystem.Views;
 
 class OperationsView : IInventoryOperationsView
@@ -13,57 +13,36 @@ class OperationsView : IInventoryOperationsView
 
     public void ShowAddNewProduct()
     {
+        var nameResult = Validator.ReadNonEmptyString("Enter product name: ");
+        if (!CheckValidation(nameResult, out var name))
+            return;
 
-        Console.WriteLine("Name: ");
-        string? name = Console.ReadLine();
-        if(string.IsNullOrWhiteSpace(name))
-        {
-            Console.WriteLine("Product name cannot be empty.");
+        var stockCountResult = Validator.ReadInt("Enter stock count: ");
+        if (!CheckValidation(stockCountResult, out var stockCount))
             return;
-        }
-        Console.WriteLine("Price: ");
-        if (!Decimal.TryParse(Console.ReadLine(), out var price))
-        {
-            Console.WriteLine("Invalid price input. Please enter a valid decimal number.");
+
+        var priceResult = Validator.ReadDecimal("Enter price: ");
+        if (!CheckValidation(priceResult, out var price))
             return;
-        }
-        Console.WriteLine("Stock Count: ");
-        if (!Int32.TryParse(Console.ReadLine(), out var stockCount))
-        {
-            Console.WriteLine("Invalid stock count input. Please enter a valid positive integer.");
-            return;
-        }
+
         operations.AddNewProduct(name, stockCount, price);
+
     }
 
     public void ShowUpdateProduct()
     {
-        Console.WriteLine("id#: ");
-        if (!UInt32.TryParse(Console.ReadLine(), out var id))
-        {
-            Console.WriteLine("Invalid ID input. Please enter a valid positive integer.");
+        var idResult = Validator.ReadUInt("Enter product ID: ");
+        if (!CheckValidation(idResult, out var id))
             return;
-        }
-
-        Console.WriteLine("New name (or press Enter to keep old): ");
-        string? name = Console.ReadLine();
-        name = String.IsNullOrWhiteSpace(name) ? null : name;
-
-        Console.WriteLine("New stock count (or press Enter to keep old): ");
-        string? stockInput = Console.ReadLine();
-        int? stockCount = null;
-        if (!String.IsNullOrWhiteSpace(stockInput) && int.TryParse(stockInput, out var stock))
-        {
-            stockCount = stock;
-        }
-
-        Console.WriteLine("New price (or press Enter to keep old): ");
-        string? priceInput = Console.ReadLine();
-        decimal? price = null;
-        if (!String.IsNullOrWhiteSpace(priceInput) && decimal.TryParse(priceInput, out var p))
-        {
-            price = p;
-        }
+        var nameResult = Validator.ReadOptionalString("Enter new product name (or press Enter to keep old): ");
+        if (!CheckValidation(nameResult, out var name))
+            return;
+        var stockCountResult = Validator.ReadOptionalInt("Enter new stock count (or press Enter to keep old): ");
+        if (!CheckValidation(stockCountResult, out var stockCount))
+            return;
+        var priceResult = Validator.ReadOptionalDecimal("Enter new price (or press Enter to keep old): ");
+        if (!CheckValidation(priceResult, out var price))
+            return;
 
         operations.UpdateProduct(id, name, stockCount, price);
 
@@ -71,27 +50,34 @@ class OperationsView : IInventoryOperationsView
 
     public void ShowDeleteProduct()
     {
-        Console.WriteLine("id#: ");
-        if (!UInt32.TryParse(Console.ReadLine(), out var id))
-        {
-            Console.WriteLine("Invalid ID input. Please enter a valid positive integer.");
+        var idResult = Validator.ReadUInt("Enter product ID to delete: ");
+        if (!CheckValidation(idResult, out var id))
             return;
-        }
+
         operations.DeleteProduct(id);
     }
 
     public void ShowDisplayProductById()
     {
-        Console.WriteLine("id#: ");
-        if (!UInt32.TryParse(Console.ReadLine(), out var id))
-        {
-            Console.WriteLine("Invalid ID input. Please enter a valid positive integer.");
+        var idResult = Validator.ReadUInt("Enter product ID: ");
+        if (!CheckValidation(idResult, out var id))
             return;
-        }
         operations.GetProductById(id);
     }
     public void ShowDisplayAllProducts(bool displayOutOfStock = false)
     {
         operations.DisplayProducts(displayOutOfStock);
     }
+    private bool CheckValidation<T>(ValidationResult<T> result, out T value)
+    {
+        if (!result.IsValid)
+        {
+            Console.WriteLine(result.ErrorMessage);
+            value = default!;
+            return false;
+        }
+        value = result.Value!;
+        return true;
+    }
+
 }
