@@ -48,3 +48,20 @@
 2025-07-28 17:39:17 [INFO] MenuView initialized.
 2025-07-28 17:39:17 [INFO] User has started the application
 2025-07-28 17:39:21 [INFO] User has exited the application
+2025-07-28 17:45:21 [INFO] Application started.
+2025-07-28 17:45:21 [INFO] Operations initialized.
+2025-07-28 17:45:21 [INFO] Products read from products.json successfully.
+2025-07-28 17:45:21 [INFO] OperationsView initialized.
+2025-07-28 17:45:21 [INFO] MenuView initialized.
+2025-07-28 17:45:21 [INFO] User has started the application
+2025-07-28 17:45:36 [INFO] Products written to products.json successfully.
+2025-07-28 17:45:36 [INFO] Product added: id#: 9, name: apple, price: $20.00, stock count: 10
+2025-07-28 17:45:42 [INFO] Displayed 8  product(s).
+2025-07-28 17:45:47 [INFO] User has exited the application
+2025-07-28 17:46:45 [INFO] Application started.
+2025-07-28 17:46:45 [INFO] Operations initialized.
+2025-07-28 17:46:45 [INFO] Products read from products.json successfully.
+2025-07-28 17:46:45 [INFO] OperationsView initialized.
+2025-07-28 17:46:45 [INFO] MenuView initialized.
+2025-07-28 17:46:45 [INFO] User has started the application
+2025-07-28 17:46:47 [INFO] User has exited the application

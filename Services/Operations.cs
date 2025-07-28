@@ -11,7 +11,7 @@ class Operations : IInventoryOperations
 {
     private List<Product> products;
     private const string FileName = "products.json";
-    private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), FileName);
+    private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(),"Data", FileName);
     private const string format = "{0,-5} {1,-20} {2,-15} {3,-10}";
 
     public Operations()
