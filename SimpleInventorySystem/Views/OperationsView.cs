@@ -1,4 +1,4 @@
-using SimpleInventorySystem.Models.Interfaces;
+using SimpleInventorySystem.Interfaces;
 using SimpleInventorySystem.Utils;
 using SimpleInventorySystem.Utils.Validation;
 namespace SimpleInventorySystem.Views;

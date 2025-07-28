@@ -1,4 +1,4 @@
-namespace SimpleInventorySystem.Models.Interfaces;
+namespace SimpleInventorySystem.Interfaces;
 public interface IInventoryOperationsView
 {
     void RenderAddNewProduct();

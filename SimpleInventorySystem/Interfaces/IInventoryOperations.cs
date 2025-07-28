@@ -1,4 +1,4 @@
-namespace SimpleInventorySystem.Models.Interfaces;
+namespace SimpleInventorySystem.Interfaces;
 interface IInventoryOperations
 {
     void DisplayProducts(bool displayOutOfStock = false);

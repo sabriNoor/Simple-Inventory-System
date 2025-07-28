@@ -1,5 +1,5 @@
-using SimpleInventorySystem.Models.Enums;
-using SimpleInventorySystem.Models.Interfaces;
+using SimpleInventorySystem.Enums;
+using SimpleInventorySystem.Interfaces;
 using SimpleInventorySystem.Utils;
 
 namespace SimpleInventorySystem.Views;

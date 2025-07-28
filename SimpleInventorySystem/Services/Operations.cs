@@ -1,7 +1,7 @@
 namespace SimpleInventorySystem.Services;
 
 using System.Text.Json;
-using SimpleInventorySystem.Models.Interfaces;
+using SimpleInventorySystem.Interfaces;
 using SimpleInventorySystem.Models;
 using SimpleInventorySystem.Utils.Validation;
 using SimpleInventorySystem.Utils;

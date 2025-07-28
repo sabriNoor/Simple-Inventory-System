@@ -1,4 +1,4 @@
-namespace SimpleInventorySystem.Models.Enums;
+namespace SimpleInventorySystem.Enums;
 public enum Option
 {
     /// <summary> Represents no option selected or default state. </summary>

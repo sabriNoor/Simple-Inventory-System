@@ -1,5 +1,5 @@
 ﻿using SimpleInventorySystem.Services;
-using SimpleInventorySystem.Models.Interfaces;
+using SimpleInventorySystem.Interfaces;
 using SimpleInventorySystem.Views;
 using SimpleInventorySystem.Utils;
 public class Program
