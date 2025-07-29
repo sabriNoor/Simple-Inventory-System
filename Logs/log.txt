@@ -1,0 +1,67 @@
+2025-07-27 16:07:49 [INFO] Application started.
+2025-07-27 16:07:49 [INFO] Operations initialized.
+2025-07-27 16:07:49 [INFO] Products read from products.json successfully.
+2025-07-27 16:07:49 [INFO] OperationsView initialized.
+2025-07-27 16:07:49 [INFO] MenuView initialized.
+2025-07-27 16:07:49 [INFO] User has started the application
+2025-07-27 16:08:07 [INFO] Products written to products.json successfully.
+2025-07-27 16:08:07 [INFO] Product added: id#: 7, name: rice, price: $20.00, stock count: 10
+2025-07-27 16:08:10 [INFO] Displayed 6  product(s).
+2025-07-27 16:08:32 [ERROR] Failed to delete product with id 9: Product with ID 9 does not exist.
+2025-07-27 16:08:37 [INFO] Displayed 6  product(s).
+2025-07-27 16:08:42 [INFO] Displayed 6 out of stock product(s).
+2025-07-27 16:08:49 [INFO] User has exited the application
+2025-07-27 16:11:52 [INFO] Application started.
+2025-07-27 16:11:52 [INFO] Operations initialized.
+2025-07-27 16:11:53 [INFO] Products read from products.json successfully.
+2025-07-27 16:11:53 [INFO] OperationsView initialized.
+2025-07-27 16:11:53 [INFO] MenuView initialized.
+2025-07-27 16:11:53 [INFO] User has started the application
+2025-07-27 16:12:05 [INFO] Updating product: id#: 3, name: Banana, price: $6.00, stock count: 125
+2025-07-27 16:12:05 [INFO] Products written to products.json successfully.
+2025-07-27 16:12:05 [INFO] Product updated: id#: 3, name: Banana, price: $20.00, stock count: 100
+2025-07-27 16:12:14 [INFO] Displayed 6  product(s).
+2025-07-27 16:12:17 [INFO] Displayed 0 out of stock product(s).
+2025-07-27 16:12:25 [ERROR] Invalid unsigned integer input.
+2025-07-27 16:12:33 [INFO] User has exited the application
+2025-07-27 16:21:29 [INFO] Application started.
+2025-07-27 16:21:29 [INFO] Operations initialized.
+2025-07-27 16:21:29 [INFO] Products read from products.json successfully.
+2025-07-27 16:21:29 [INFO] OperationsView initialized.
+2025-07-27 16:21:29 [INFO] MenuView initialized.
+2025-07-27 16:21:29 [INFO] User has started the application
+2025-07-27 16:22:04 [INFO] Displayed 6  product(s).
+2025-07-27 16:22:35 [ERROR] Invalid product details: Stock count cannot be negative.
+2025-07-27 16:22:35 [INFO] Product not added due to validation failure.
+2025-07-27 16:23:00 [INFO] Products written to products.json successfully.
+2025-07-27 16:23:00 [INFO] Product added: id#: 8, name: apple, price: $10.00, stock count: 0
+2025-07-27 16:23:18 [INFO] Updating product: id#: 3, name: Banana, price: $20.00, stock count: 100
+2025-07-27 16:23:18 [INFO] Products written to products.json successfully.
+2025-07-27 16:23:18 [INFO] Product updated: id#: 3, name: test3, price: $20.00, stock count: 15
+2025-07-27 16:23:22 [INFO] Displayed 7  product(s).
+2025-07-27 16:23:28 [INFO] Displayed 1 out of stock product(s).
+2025-07-27 16:29:05 [INFO] User has exited the application
+2025-07-28 17:39:17 [INFO] Application started.
+2025-07-28 17:39:17 [INFO] Operations initialized.
+2025-07-28 17:39:17 [INFO] Products read from products.json successfully.
+2025-07-28 17:39:17 [INFO] OperationsView initialized.
+2025-07-28 17:39:17 [INFO] MenuView initialized.
+2025-07-28 17:39:17 [INFO] User has started the application
+2025-07-28 17:39:21 [INFO] User has exited the application
+2025-07-28 17:45:21 [INFO] Application started.
+2025-07-28 17:45:21 [INFO] Operations initialized.
+2025-07-28 17:45:21 [INFO] Products read from products.json successfully.
+2025-07-28 17:45:21 [INFO] OperationsView initialized.
+2025-07-28 17:45:21 [INFO] MenuView initialized.
+2025-07-28 17:45:21 [INFO] User has started the application
+2025-07-28 17:45:36 [INFO] Products written to products.json successfully.
+2025-07-28 17:45:36 [INFO] Product added: id#: 9, name: apple, price: $20.00, stock count: 10
+2025-07-28 17:45:42 [INFO] Displayed 8  product(s).
+2025-07-28 17:45:47 [INFO] User has exited the application
+2025-07-28 17:46:45 [INFO] Application started.
+2025-07-28 17:46:45 [INFO] Operations initialized.
+2025-07-28 17:46:45 [INFO] Products read from products.json successfully.
+2025-07-28 17:46:45 [INFO] OperationsView initialized.
+2025-07-28 17:46:45 [INFO] MenuView initialized.
+2025-07-28 17:46:45 [INFO] User has started the application
+2025-07-28 17:46:47 [INFO] User has exited the application
