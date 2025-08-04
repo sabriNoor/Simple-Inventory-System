@@ -17,19 +17,6 @@ public class Product
         Price = price;
     }
 
-
-    public void DecrementStockCount()
-    {
-        if (StockCount > 0)
-        {
-            StockCount--;
-        }
-        else
-        {
-            Console.WriteLine("Sorry, stock count is zero!");
-        }
-    }
-
     public override string ToString()
     {
         return $"id#: {Id}, name: {Name}, price: {Price:c}, stock count: {StockCount}";
