@@ -1,114 +1,100 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# 🗃️ Simple Inventory System
 
-<h3 align="center">Project Title</h3>
-
-<div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
-</div>
+This is a **console-based inventory management system** built with C#. It allows users to manage products using a simple command-line menu. Product data is stored in a JSON file, and the system includes logging and input validation.
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
+## 📋 Features
 
-## 📝 Table of Contents
+- Add a new product
+- Update existing product details
+- Remove a product by ID
+- Display a product by ID
+- Display all products
+- Show out-of-stock products
+- Persist data in a JSON file
+- Validate input and log operations
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+---
 
-## 🧐 About <a name = "about"></a>
+## 📦 Menu Options
 
-Write about 1-2 paragraphs describing the purpose of your project.
+1- Add New Product
+2- Update Product
+3- Remove Product
+4- Display Product By ID
+5- Display All Products
+6- Display Out of Stock Products
+7- Exit
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+---
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+## 📁 Project Structure
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
+```plaintext
+├── Enums
+│ └── Options.cs # Enum for menu options
+│
+├── Interfaces
+│ ├── IFileService.cs # Interface for file I/O operations
+│ ├── IInventoryMenuView.cs # Interface for the main menu view
+│ ├── IInventoryOperations.cs # Interface for core product operations
+│ └── IInventoryOperationsView.cs # Interface for operations display
+│
+├── Logs
+│ └── log.txt # Log file for recording events
+│
+├── Models
+│ └── Product.cs # Product data model
+│
+├── Services
+│ ├── FileService.cs # Handles reading/writing product JSON
+│ └── OpreationService.cs # Implements inventory logic
+│
+├── Utils
+│ ├── Logger.cs # Built-in logger utility
+│ └── Validations
+│ ├── ProductValidator.cs # Validates product fields
+│ ├── ValidationResult.cs # Represents validation result
+│ └── Validator.cs # General validation handler
+│
+├── Views
+│ ├── MenuView.cs # Handles main menu UI
+│ └── OperationsView.cs # Handles display of operation results
+│
+└── Program.cs # Application entry point
 
 ```
-Give an example
-```
 
-## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+---
 
-## 🚀 Deployment <a name = "deployment"></a>
+## 📂 Data Storage
 
-Add additional notes about how to deploy this on a live system.
+- All product data is stored in a local JSON file, enabling persistent storage across application runs.
+- Logs are written to `Logs/log.txt`.
 
-## ⛏️ Built Using <a name = "built_using"></a>
+---
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+## 🚀 Getting Started
 
-## ✍️ Authors <a name = "authors"></a>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/inventory-system.git
+   cd inventory-system
+  ```
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+2. **Build and run**
+  Open in Visual Studio or run using CLI:
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+   ```bash
+   dotnet run
+  ```
+3. **Use the menu to manage inventory**
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+## 📄 License
+MIT License — feel free to use and modify.
+
+## 📂 Contribution
+Feel free to fork this repository and contribute by submitting a pull request.
