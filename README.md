@@ -65,6 +65,8 @@ This is a **console-based inventory management system** built with C#. It allows
 └── Program.cs # Application entry point
 
 ```
+---
+
 ## 📊 UML Diagram
 
 Below is the UML class diagram demonstrating core system relationships:
@@ -90,8 +92,8 @@ Below is the UML class diagram demonstrating core system relationships:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/inventory-system.git
-cd inventory-system
+git clone https://github.com/sabriNoor/Simple-Inventory-System
+cd Simple-Inventory-System
 ```
 
 2. Build and run
@@ -101,9 +103,12 @@ dotnet run
 ```
 3. Use the menu to manage inventory
 
+---
 
 ## 📄 License
 MIT License — feel free to use and modify.
+
+---
 
 ## 📂 Contribution
 Feel free to fork this repository and contribute by submitting a pull request.
