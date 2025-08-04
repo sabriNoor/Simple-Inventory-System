@@ -19,13 +19,13 @@ This is a **console-based inventory management system** built with C#. It allows
 
 ## 📦 Menu Options
 
-1- Add New Product
-2- Update Product
-3- Remove Product
-4- Display Product By ID
-5- Display All Products
-6- Display Out of Stock Products
-7- Exit
+1. Add New Product
+2. Update Product
+3. Remove Product
+4. Display Product By ID
+5. Display All Products
+6. Display Out of Stock Products
+7. Exit
 
 ---
 
