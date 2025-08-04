@@ -9,17 +9,16 @@ using SimpleInventorySystem.Utils;
 
 class Operations : IInventoryOperations
 {
-    private List<Product> products;
-    private const string FileName = "products.json";
-    private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(),"Data", FileName);
+    private readonly List<Product> products;
     private const string format = "{0,-5} {1,-20} {2,-15} {3,-10}";
 
-    public Operations()
-    {
-        products = new List<Product>();
-        Console.WriteLine("Path: " + filePath);
+    private readonly IFileService<Product> _fileService;
+
+    public Operations(IFileService<Product> fileService)
+    {  
+        _fileService = fileService;
         Logger.LogInfo($"Operations initialized.");
-        ReadFile();
+        products =  _fileService.ReadFile();
     }
 
     public bool AddNewProduct(string name, int stockCount, decimal price)
@@ -35,7 +34,7 @@ class Operations : IInventoryOperations
                 return false;
             }
             products.Add(product);
-            WriteOnFile();
+            _fileService.WriteFile(products);
             Logger.LogInfo($"Product added: {product}");
             return true;
 
@@ -53,7 +52,7 @@ class Operations : IInventoryOperations
         {
             Product product = GetExistingProduct(id);
             products.Remove(product);
-            WriteOnFile();
+            _fileService.WriteFile(products);
             Logger.LogInfo($"Product deleted: {product}");
             return true;
         }
@@ -83,7 +82,7 @@ class Operations : IInventoryOperations
             if (stockCount != null) product.StockCount = stockCount.Value;
             if (price != null) product.Price = price.Value;
 
-            WriteOnFile();
+           _fileService.WriteFile(products);
             Logger.LogInfo($"Product updated: {product}");
             return true;
         }
@@ -130,43 +129,6 @@ class Operations : IInventoryOperations
 
     private Product? SearchProduct(uint id)=>
         products.FirstOrDefault(p => p.Id == id);
-
-    private void ReadFile()
-    {
-        try
-        {
-            if (!File.Exists(filePath))
-            {
-                Console.WriteLine($"File {FileName} not found. Starting with empty product list.");
-                Logger.LogWarning($"File {FileName} not found. Starting with empty product list.");
-                return;
-            }
-
-            string json = File.ReadAllText(filePath);
-            products = JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
-            Logger.LogInfo($"Products read from {FileName} successfully.");
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError($"Failed to read the JSON file {FileName}: {ex.Message}");
-            Console.WriteLine($"Failed to read the JSON file {FileName}. {ex.Message}");
-        }
-    }
-
-    private void WriteOnFile()
-    {
-        try
-        {
-            string json = JsonSerializer.Serialize(products);
-            File.WriteAllText(filePath, json);
-            Logger.LogInfo($"Products written to {FileName} successfully.");
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError($"Failed to write to the JSON file {FileName}: {ex.Message}");
-            Console.WriteLine($"Failed to write to the JSON file {FileName}. {ex.Message}");
-        }
-    }
 
     private Product GetExistingProduct(uint id)
     {

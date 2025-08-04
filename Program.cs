@@ -2,6 +2,7 @@
 using SimpleInventorySystem.Interfaces;
 using SimpleInventorySystem.Views;
 using SimpleInventorySystem.Utils;
+using SimpleInventorySystem.Models;
 public class Program
 {
     public static void Main()
@@ -9,7 +10,8 @@ public class Program
         try
         {
             Logger.LogInfo("Application started.");
-            IInventoryOperations inventoryOperations = new Operations();
+            IFileService<Product> fileService = new FileService<Product>("products.json");
+            IInventoryOperations inventoryOperations = new Operations(fileService);
             IInventoryOperationsView inventoryOperationsView = new OperationsView(inventoryOperations);
             IInventoryMenuView menuView = new MenuView(inventoryOperationsView);
             menuView.ExecuteMenu();
