@@ -65,7 +65,11 @@ This is a **console-based inventory management system** built with C#. It allows
 └── Program.cs # Application entry point
 
 ```
+## 📊 UML Diagram
 
+Below is the UML class diagram demonstrating core system relationships:
+
+![Inventory UML Diagram](docs/uml/inventory_uml.png)
 
 ---
 
@@ -78,19 +82,28 @@ This is a **console-based inventory management system** built with C#. It allows
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
+### Prerequisites
+- .NET SDK (version 6.0 or higher)
+
+
+### Installation
+
+1. Clone the repository
+
    ```bash
    git clone https://github.com/your-username/inventory-system.git
    cd inventory-system
+
   ```
 
-2. **Build and run**
+2. Build and run
   Open in Visual Studio or run using CLI:
 
    ```bash
    dotnet run
+
   ```
-3. **Use the menu to manage inventory**
+3. Use the menu to manage inventory
 
 
 ## 📄 License
