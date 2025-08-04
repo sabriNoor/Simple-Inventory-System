@@ -89,20 +89,16 @@ Below is the UML class diagram demonstrating core system relationships:
 ### Installation
 
 1. Clone the repository
-
-   ```bash
-   git clone https://github.com/your-username/inventory-system.git
-   cd inventory-system
-
-  ```
+```bash
+git clone https://github.com/your-username/inventory-system.git
+cd inventory-system
+```
 
 2. Build and run
-  Open in Visual Studio or run using CLI:
-
-   ```bash
-   dotnet run
-
-  ```
+Open in Visual Studio or run using CLI:
+```bash
+dotnet run
+```
 3. Use the menu to manage inventory
 
 
