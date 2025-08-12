@@ -1,5 +1,5 @@
 namespace SimpleInventorySystem.Interfaces;
-interface IInventoryOperations
+public interface IInventoryOperations
 {
     void DisplayProducts(bool displayOutOfStock = false);
     bool AddNewProduct(string name, int stockCount, decimal price);
