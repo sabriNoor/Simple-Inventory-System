@@ -1,0 +1,163 @@
+2025-07-27 16:07:49 [INFO] Application started.
+2025-07-27 16:07:49 [INFO] Operations initialized.
+2025-07-27 16:07:49 [INFO] Products read from products.json successfully.
+2025-07-27 16:07:49 [INFO] OperationsView initialized.
+2025-07-27 16:07:49 [INFO] MenuView initialized.
+2025-07-27 16:07:49 [INFO] User has started the application
+2025-07-27 16:08:07 [INFO] Products written to products.json successfully.
+2025-07-27 16:08:07 [INFO] Product added: id#: 7, name: rice, price: $20.00, stock count: 10
+2025-07-27 16:08:10 [INFO] Displayed 6  product(s).
+2025-07-27 16:08:32 [ERROR] Failed to delete product with id 9: Product with ID 9 does not exist.
+2025-07-27 16:08:37 [INFO] Displayed 6  product(s).
+2025-07-27 16:08:42 [INFO] Displayed 6 out of stock product(s).
+2025-07-27 16:08:49 [INFO] User has exited the application
+2025-07-27 16:11:52 [INFO] Application started.
+2025-07-27 16:11:52 [INFO] Operations initialized.
+2025-07-27 16:11:53 [INFO] Products read from products.json successfully.
+2025-07-27 16:11:53 [INFO] OperationsView initialized.
+2025-07-27 16:11:53 [INFO] MenuView initialized.
+2025-07-27 16:11:53 [INFO] User has started the application
+2025-07-27 16:12:05 [INFO] Updating product: id#: 3, name: Banana, price: $6.00, stock count: 125
+2025-07-27 16:12:05 [INFO] Products written to products.json successfully.
+2025-07-27 16:12:05 [INFO] Product updated: id#: 3, name: Banana, price: $20.00, stock count: 100
+2025-07-27 16:12:14 [INFO] Displayed 6  product(s).
+2025-07-27 16:12:17 [INFO] Displayed 0 out of stock product(s).
+2025-07-27 16:12:25 [ERROR] Invalid unsigned integer input.
+2025-07-27 16:12:33 [INFO] User has exited the application
+2025-07-27 16:21:29 [INFO] Application started.
+2025-07-27 16:21:29 [INFO] Operations initialized.
+2025-07-27 16:21:29 [INFO] Products read from products.json successfully.
+2025-07-27 16:21:29 [INFO] OperationsView initialized.
+2025-07-27 16:21:29 [INFO] MenuView initialized.
+2025-07-27 16:21:29 [INFO] User has started the application
+2025-07-27 16:22:04 [INFO] Displayed 6  product(s).
+2025-07-27 16:22:35 [ERROR] Invalid product details: Stock count cannot be negative.
+2025-07-27 16:22:35 [INFO] Product not added due to validation failure.
+2025-07-27 16:23:00 [INFO] Products written to products.json successfully.
+2025-07-27 16:23:00 [INFO] Product added: id#: 8, name: apple, price: $10.00, stock count: 0
+2025-07-27 16:23:18 [INFO] Updating product: id#: 3, name: Banana, price: $20.00, stock count: 100
+2025-07-27 16:23:18 [INFO] Products written to products.json successfully.
+2025-07-27 16:23:18 [INFO] Product updated: id#: 3, name: test3, price: $20.00, stock count: 15
+2025-07-27 16:23:22 [INFO] Displayed 7  product(s).
+2025-07-27 16:23:28 [INFO] Displayed 1 out of stock product(s).
+2025-07-27 16:29:05 [INFO] User has exited the application
+2025-07-28 17:39:17 [INFO] Application started.
+2025-07-28 17:39:17 [INFO] Operations initialized.
+2025-07-28 17:39:17 [INFO] Products read from products.json successfully.
+2025-07-28 17:39:17 [INFO] OperationsView initialized.
+2025-07-28 17:39:17 [INFO] MenuView initialized.
+2025-07-28 17:39:17 [INFO] User has started the application
+2025-07-28 17:39:21 [INFO] User has exited the application
+2025-07-28 17:45:21 [INFO] Application started.
+2025-07-28 17:45:21 [INFO] Operations initialized.
+2025-07-28 17:45:21 [INFO] Products read from products.json successfully.
+2025-07-28 17:45:21 [INFO] OperationsView initialized.
+2025-07-28 17:45:21 [INFO] MenuView initialized.
+2025-07-28 17:45:21 [INFO] User has started the application
+2025-07-28 17:45:36 [INFO] Products written to products.json successfully.
+2025-07-28 17:45:36 [INFO] Product added: id#: 9, name: apple, price: $20.00, stock count: 10
+2025-07-28 17:45:42 [INFO] Displayed 8  product(s).
+2025-07-28 17:45:47 [INFO] User has exited the application
+2025-07-28 17:46:45 [INFO] Application started.
+2025-07-28 17:46:45 [INFO] Operations initialized.
+2025-07-28 17:46:45 [INFO] Products read from products.json successfully.
+2025-07-28 17:46:45 [INFO] OperationsView initialized.
+2025-07-28 17:46:45 [INFO] MenuView initialized.
+2025-07-28 17:46:45 [INFO] User has started the application
+2025-07-28 17:46:47 [INFO] User has exited the application
+2025-08-04 11:23:40 [INFO] Application started.
+2025-08-04 11:23:40 [INFO] Operations initialized.
+2025-08-04 11:23:40 [WARNING] File D:\noor\tarining\project 1\Data\data.json not found. Starting with empty list.
+2025-08-04 11:23:40 [INFO] OperationsView initialized.
+2025-08-04 11:23:40 [INFO] MenuView initialized.
+2025-08-04 11:23:40 [INFO] User has started the application
+2025-08-04 11:23:53 [INFO] User has exited the application
+2025-08-04 11:24:18 [INFO] Application started.
+2025-08-04 11:24:18 [INFO] Operations initialized.
+2025-08-04 11:24:18 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:24:18 [INFO] OperationsView initialized.
+2025-08-04 11:24:18 [INFO] MenuView initialized.
+2025-08-04 11:24:18 [INFO] User has started the application
+2025-08-04 11:24:21 [INFO] Displayed 0  product(s).
+2025-08-04 11:24:45 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:24:45 [INFO] Product added: id#: 1, name: zooz, price: $2.00, stock count: 10
+2025-08-04 11:24:56 [INFO] Displayed 1  product(s).
+2025-08-04 11:25:02 [INFO] User has exited the application
+2025-08-04 11:25:23 [INFO] Application started.
+2025-08-04 11:25:23 [INFO] Operations initialized.
+2025-08-04 11:25:23 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:25:23 [INFO] OperationsView initialized.
+2025-08-04 11:25:23 [INFO] MenuView initialized.
+2025-08-04 11:25:23 [INFO] User has started the application
+2025-08-04 11:25:30 [INFO] Displayed 0  product(s).
+2025-08-04 11:25:39 [INFO] User has exited the application
+2025-08-04 11:26:14 [INFO] Application started.
+2025-08-04 11:26:14 [INFO] Operations initialized.
+2025-08-04 11:26:15 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:26:15 [INFO] OperationsView initialized.
+2025-08-04 11:26:15 [INFO] MenuView initialized.
+2025-08-04 11:26:15 [INFO] User has started the application
+2025-08-04 11:26:22 [INFO] Displayed 0  product(s).
+2025-08-04 11:26:31 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:26:31 [INFO] Product added: id#: 1, name: lolo, price: $10.00, stock count: 20
+2025-08-04 11:26:34 [INFO] Displayed 1  product(s).
+2025-08-04 11:26:43 [INFO] User has exited the application
+2025-08-04 11:27:36 [INFO] Application started.
+2025-08-04 11:27:36 [INFO] Operations initialized.
+2025-08-04 11:27:36 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:27:36 [INFO] OperationsView initialized.
+2025-08-04 11:27:36 [INFO] MenuView initialized.
+2025-08-04 11:27:36 [INFO] User has started the application
+2025-08-04 11:27:43 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:27:43 [INFO] Product added: id#: 1, name: pop, price: $20.00, stock count: 10
+2025-08-04 11:27:45 [INFO] Displayed 1  product(s).
+2025-08-04 11:27:47 [INFO] User has exited the application
+2025-08-04 11:27:52 [INFO] Application started.
+2025-08-04 11:27:52 [INFO] Operations initialized.
+2025-08-04 11:27:52 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:27:52 [INFO] OperationsView initialized.
+2025-08-04 11:27:52 [INFO] MenuView initialized.
+2025-08-04 11:27:52 [INFO] User has started the application
+2025-08-04 11:27:54 [INFO] Displayed 0  product(s).
+2025-08-04 11:27:56 [INFO] User has exited the application
+2025-08-04 11:33:35 [INFO] Application started.
+2025-08-04 11:33:35 [INFO] Operations initialized.
+2025-08-04 11:33:35 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:33:35 [INFO] OperationsView initialized.
+2025-08-04 11:33:35 [INFO] MenuView initialized.
+2025-08-04 11:33:35 [INFO] User has started the application
+2025-08-04 11:33:39 [INFO] Displayed 0  product(s).
+2025-08-04 11:33:47 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:33:47 [INFO] Product added: id#: 1, name: lemon, price: $20.00, stock count: 10
+2025-08-04 11:33:57 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:33:57 [INFO] Product added: id#: 2, name: banana, price: $20.00, stock count: 10
+2025-08-04 11:33:59 [INFO] Displayed 2  product(s).
+2025-08-04 11:34:02 [INFO] User has exited the application
+2025-08-04 11:34:09 [INFO] Application started.
+2025-08-04 11:34:09 [INFO] Operations initialized.
+2025-08-04 11:34:09 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:34:09 [INFO] OperationsView initialized.
+2025-08-04 11:34:09 [INFO] MenuView initialized.
+2025-08-04 11:34:09 [INFO] User has started the application
+2025-08-04 11:34:15 [INFO] Displayed 0  product(s).
+2025-08-04 11:36:51 [INFO] User has exited the application
+2025-08-04 11:37:04 [INFO] Application started.
+2025-08-04 11:37:04 [INFO] Operations initialized.
+2025-08-04 11:37:04 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:37:04 [INFO] OperationsView initialized.
+2025-08-04 11:37:04 [INFO] MenuView initialized.
+2025-08-04 11:37:04 [INFO] User has started the application
+2025-08-04 11:37:12 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:37:12 [INFO] Product added: id#: 3, name: lemon, price: $10.00, stock count: 100
+2025-08-04 11:37:15 [INFO] Displayed 3  product(s).
+2025-08-04 11:37:28 [INFO] Data written to D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:37:28 [INFO] Product deleted: id#: 1, name: lemon, price: $20.00, stock count: 10
+2025-08-04 11:37:29 [INFO] User has exited the application
+2025-08-04 11:37:34 [INFO] Application started.
+2025-08-04 11:37:34 [INFO] Operations initialized.
+2025-08-04 11:37:35 [INFO] Data read from D:\noor\tarining\project 1\Data\products.json successfully.
+2025-08-04 11:37:35 [INFO] OperationsView initialized.
+2025-08-04 11:37:35 [INFO] MenuView initialized.
+2025-08-04 11:37:35 [INFO] User has started the application
+2025-08-04 11:37:41 [INFO] Displayed 2  product(s).
+2025-08-04 11:37:45 [INFO] User has exited the application
